@@ -2,6 +2,9 @@
 #define QTLINKER_H
 
 #include <QMainWindow>
+#include <QVBoxLayout>
+#include <QWidget>
+#include "pathBar.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +22,8 @@ public:
 
 private:
     Ui::qtLinker *ui;
+    QWidget *centralWidget;
+    QVBoxLayout *centralLayout;
+    Pathbar *pathbar;
 };
 #endif // QTLINKER_H
