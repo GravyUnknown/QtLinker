@@ -13,6 +13,7 @@ public:
     Pathbar(QWidget *parent=nullptr);
 private:
     QCompleter *editorCompleter;
+    QFileSystemModel *fsModel;
 };
 
 #endif // PATHBAR_H
