@@ -4,7 +4,9 @@
 #include <QMainWindow>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "pathBar.h"
+#include <QFileSystemModel>
+
+class Pathbar;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,5 +27,6 @@ private:
     QWidget *centralWidget;
     QVBoxLayout *centralLayout;
     Pathbar *pathbar;
+    QFileSystemModel *m_fsmodel;
 };
 #endif // QTLINKER_H

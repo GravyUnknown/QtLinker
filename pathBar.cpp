@@ -1,15 +1,24 @@
 #include "pathBar.h"
 
+void Pathbar::initCompleter(QFileSystemModel* model)
+{
+    fsModel = model;
+    if (fsModel == NULL)
+    {
+        return;
+    }
+    fsModel->setRootPath("");
+
+    editorCompleter->setModel(fsModel);
+    editorCompleter->setCompletionMode(QCompleter::PopupCompletion);
+}
+
 Pathbar::Pathbar(QWidget *parent)
     :QLineEdit(parent)
 {
     this->editorCompleter = new QCompleter(this);
-    this->fsModel = new QFileSystemModel(editorCompleter);
 
-    fsModel->setRootPath("C:/");
 
-    editorCompleter->setModel(fsModel);
-    editorCompleter->setCompletionMode(QCompleter::PopupCompletion);
 
     this->setCompleter(editorCompleter);
 

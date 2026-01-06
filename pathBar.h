@@ -11,9 +11,10 @@ class Pathbar: public QLineEdit
 
 public:
     Pathbar(QWidget *parent=nullptr);
+    void initCompleter(QFileSystemModel* model);
 private:
     QCompleter *editorCompleter;
-    QFileSystemModel *fsModel;
+    QFileSystemModel *fsModel=nullptr;
 };
 
 #endif // PATHBAR_H
