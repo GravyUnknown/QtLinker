@@ -1,0 +1,18 @@
+#ifndef FILELISTING_H
+#define FILELISTING_H
+
+#include <QListView>
+#include <QFileSystemModel>
+#include <iostream>
+
+class FileListing: public QListView
+{
+public:
+    FileListing(QWidget* parent=nullptr, QFileSystemModel* model=nullptr);
+private:
+    QListView* m_listview;
+    QFileSystemModel* m_fsModel;
+
+};
+
+#endif // FILELISTING_H

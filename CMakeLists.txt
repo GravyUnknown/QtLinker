@@ -12,6 +12,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
+
+# For clang-cl specifically
+
 set(PROJECT_SOURCES
         main.cpp
         qtlinker.cpp
@@ -25,6 +28,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         pathBar.h
         pathBar.cpp
+        filelisting.h filelisting.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET QtLinker APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

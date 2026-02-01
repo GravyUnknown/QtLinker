@@ -7,6 +7,7 @@
 #include <QFileSystemModel>
 
 class Pathbar;
+class FileListing;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,6 +28,10 @@ private:
     QWidget *centralWidget;
     QVBoxLayout *centralLayout;
     Pathbar *pathbar;
+    FileListing *filelisting;
     QFileSystemModel *m_fsmodel;
+
+private slots:
+    void onDirectoryLoaded(const QString &path);
 };
 #endif // QTLINKER_H
