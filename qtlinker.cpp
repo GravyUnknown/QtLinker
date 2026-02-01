@@ -20,12 +20,16 @@ qtLinker::qtLinker(QWidget *parent)
   centralLayout->addWidget(pathbar);
 
   filelisting = new FileListing(centralWidget, m_fsmodel);
-  connect(m_fsmodel, &QFileSystemModel::directoryLoaded, this, &qtLinker::onDirectoryLoaded);
+//  connect(m_fsmodel, &QFileSystemModel::directoryLoaded, this, &qtLinker::onDirectoryLoaded);
 
   QModelIndex rootIndex = m_fsmodel->setRootPath("C:\\");
+  filelisting->setRootIndex(rootIndex);
+
+  centralLayout->addWidget(filelisting);
 
 }
 
+/*
 void qtLinker::onDirectoryLoaded(const QString &path){
 
     if(path == "C:\\" || path=="C:/"){
@@ -36,7 +40,7 @@ void qtLinker::onDirectoryLoaded(const QString &path){
         }
     }
 
-}
+}*/
 
 qtLinker::~qtLinker() { delete ui; }
 

@@ -31,7 +31,5 @@ private:
     FileListing *filelisting;
     QFileSystemModel *m_fsmodel;
 
-private slots:
-    void onDirectoryLoaded(const QString &path);
 };
 #endif // QTLINKER_H
