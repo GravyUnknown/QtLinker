@@ -22,8 +22,6 @@ qtLinker::qtLinker(QWidget *parent)
   filelisting = new FileListing(centralWidget, m_fsmodel);
 //  connect(m_fsmodel, &QFileSystemModel::directoryLoaded, this, &qtLinker::onDirectoryLoaded);
 
-  QModelIndex rootIndex = m_fsmodel->setRootPath("C:\\");
-  filelisting->setRootIndex(rootIndex);
 
   centralLayout->addWidget(filelisting);
 
