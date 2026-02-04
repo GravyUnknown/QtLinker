@@ -1,14 +1,14 @@
 #include "pathBar.h"
 
 void Pathbar::initCompleter(QFileSystemModel *model) {
-  if (fsModel == nullptr) {
-      throw std::runtime_error("PathBar.h: Model is not defined");
-  }
-  fsModel = model;
-  fsModel->setRootPath("");
+    fsModel = model;
+    if (fsModel == nullptr) {
+        throw std::runtime_error("PathBar.h: model is not defined");
+    }
+    fsModel->setRootPath("");
 
-  editorCompleter->setModel(fsModel);
-  editorCompleter->setCompletionMode(QCompleter::PopupCompletion);
+    editorCompleter->setModel(fsModel);
+    editorCompleter->setCompletionMode(QCompleter::PopupCompletion);
 }
 
 Pathbar::Pathbar(QWidget *parent) : QLineEdit(parent) {
@@ -16,7 +16,19 @@ Pathbar::Pathbar(QWidget *parent) : QLineEdit(parent) {
     {
         throw std::runtime_error("PathBar.cpp: Parent is not defined");
     }
-  this->editorCompleter = new QCompleter(this);
+    this->editorCompleter = new QCompleter(this);
 
-  this->setCompleter(editorCompleter);
+    this->setCompleter(editorCompleter);
+
+
+}
+
+
+void Pathbar::onTextEdit()
+{
+    QDir pathGiven = this->text();
+    if(!pathGiven.exists())
+    {
+        qDebug() << "Use the completer for a valid path";
+    }
 }

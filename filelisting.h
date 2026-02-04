@@ -3,7 +3,6 @@
 
 #include <QListView>
 #include <QFileSystemModel>
-#include <iostream>
 
 class FileListing: public QListView
 {
@@ -13,6 +12,8 @@ private:
     QListView* m_listview;
     QFileSystemModel* m_fsModel;
 
+public slots:
+    void onTextEdit();
 };
 
 #endif // FILELISTING_H

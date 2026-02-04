@@ -4,6 +4,8 @@
 #include <QCompleter>
 #include <QFileSystemModel>
 #include <QWidget>
+#include <QDebug>
+#include <QDir>
 
 class Pathbar: public QLineEdit
 {
@@ -16,7 +18,7 @@ private:
     QCompleter *editorCompleter;
     QFileSystemModel *fsModel=nullptr;
 
-private slots:
+public slots:
     void onTextEdit();
 };
 
