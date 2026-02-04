@@ -1,10 +1,10 @@
 #include "pathBar.h"
 
 void Pathbar::initCompleter(QFileSystemModel *model) {
-  fsModel = model;
-  if (fsModel == NULL) {
-    return;
+  if (fsModel == nullptr) {
+      throw std::runtime_error("PathBar.h: Model is not defined");
   }
+  fsModel = model;
   fsModel->setRootPath("");
 
   editorCompleter->setModel(fsModel);
@@ -12,6 +12,10 @@ void Pathbar::initCompleter(QFileSystemModel *model) {
 }
 
 Pathbar::Pathbar(QWidget *parent) : QLineEdit(parent) {
+    if (parent == nullptr)
+    {
+        throw std::runtime_error("PathBar.cpp: Parent is not defined");
+    }
   this->editorCompleter = new QCompleter(this);
 
   this->setCompleter(editorCompleter);

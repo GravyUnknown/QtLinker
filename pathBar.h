@@ -15,6 +15,9 @@ public:
 private:
     QCompleter *editorCompleter;
     QFileSystemModel *fsModel=nullptr;
+
+private slots:
+    void onTextEdit();
 };
 
 #endif // PATHBAR_H

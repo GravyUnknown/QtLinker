@@ -19,7 +19,7 @@ qtLinker::qtLinker(QWidget *parent)
   pathbar->initCompleter(m_fsmodel);
   centralLayout->addWidget(pathbar);
 
-  filelisting = new FileListing(centralWidget, m_fsmodel);
+  filelisting = new FileListing(centralWidget, nullptr);
 //  connect(m_fsmodel, &QFileSystemModel::directoryLoaded, this, &qtLinker::onDirectoryLoaded);
 
 
