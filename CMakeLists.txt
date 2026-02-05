@@ -16,19 +16,19 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 # For clang-cl specifically
 
 set(PROJECT_SOURCES
-        main.cpp
-        qtlinker.cpp
-        qtlinker.h
-        qtlinker.ui
+    Main.cpp
+    QtLinker.cpp
+        QtLinker.h
+        QtLinker.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(QtLinker
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        pathBar.h
-        pathBar.cpp
-        filelisting.h filelisting.cpp
+        PathBar.h
+        PathBar.cpp
+        FileListing.h FileListing.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET QtLinker APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

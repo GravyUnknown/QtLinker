@@ -7,12 +7,12 @@
 #include <QDebug>
 #include <QDir>
 
-class Pathbar: public QLineEdit
+class PathBar: public QLineEdit
 {
     Q_OBJECT
 
 public:
-    Pathbar(QWidget *parent=nullptr);
+    PathBar(QWidget *parent=nullptr);
     void initCompleter(QFileSystemModel* model);
 private:
     QCompleter *editorCompleter;

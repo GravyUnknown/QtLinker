@@ -1,6 +1,6 @@
-#include "pathBar.h"
+#include "PathBar.h"
 
-void Pathbar::initCompleter(QFileSystemModel *model) {
+void PathBar::initCompleter(QFileSystemModel *model) {
     fsModel = model;
     if (fsModel == nullptr) {
         throw std::runtime_error("PathBar.h: model is not defined");
@@ -11,7 +11,7 @@ void Pathbar::initCompleter(QFileSystemModel *model) {
     editorCompleter->setCompletionMode(QCompleter::PopupCompletion);
 }
 
-Pathbar::Pathbar(QWidget *parent) : QLineEdit(parent) {
+PathBar::PathBar(QWidget *parent) : QLineEdit(parent) {
     if (parent == nullptr)
     {
         throw std::runtime_error("PathBar.cpp: Parent is not defined");
@@ -24,7 +24,7 @@ Pathbar::Pathbar(QWidget *parent) : QLineEdit(parent) {
 }
 
 
-void Pathbar::onTextEdit()
+void PathBar::onTextEdit()
 {
     QDir pathGiven = this->text();
     if(!pathGiven.exists())

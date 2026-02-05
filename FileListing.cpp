@@ -1,4 +1,4 @@
-#include "filelisting.h"
+#include "FileListing.h"
 #include <qlineedit.h>
 
 FileListing::FileListing(QWidget* parent, QFileSystemModel* model):QListView(parent), m_fsModel(model) {

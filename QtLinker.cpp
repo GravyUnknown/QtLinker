@@ -1,7 +1,7 @@
-#include "qtlinker.h"
-#include "./ui_qtlinker.h"
-#include "pathBar.h"
-#include "filelisting.h"
+#include "QtLinker.h"
+#include "./ui_QtLinker.h"
+#include "PathBar.h"
+#include "FileListing.h"
 
 qtLinker::qtLinker(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::qtLinker) {
@@ -15,7 +15,7 @@ qtLinker::qtLinker(QWidget *parent)
 
   centralWidget->setLayout(centralLayout);
 
-  pathbar = new Pathbar(centralWidget);
+  pathbar = new PathBar(centralWidget);
   pathbar->initCompleter(m_fsmodel);
   centralLayout->addWidget(pathbar);
 

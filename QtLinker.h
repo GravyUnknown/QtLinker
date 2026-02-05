@@ -6,7 +6,7 @@
 #include <QWidget>
 #include <QFileSystemModel>
 
-class Pathbar;
+class PathBar;
 class FileListing;
 
 QT_BEGIN_NAMESPACE
@@ -27,7 +27,7 @@ private:
     Ui::qtLinker *ui;
     QWidget *centralWidget;
     QVBoxLayout *centralLayout;
-    Pathbar *pathbar;
+    PathBar *pathbar;
     FileListing *filelisting;
     QFileSystemModel *m_fsmodel;
 

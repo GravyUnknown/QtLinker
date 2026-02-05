@@ -1,4 +1,4 @@
-#include "qtlinker.h"
+#include "QtLinker.h"
 #include <iostream>
 
 #include <QApplication>
