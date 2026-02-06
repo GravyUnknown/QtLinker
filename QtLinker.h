@@ -5,6 +5,8 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QFileSystemModel>
+#include <QItemSelectionModel>
+#include <iostream>
 
 class PathBar;
 class FileListing;

@@ -16,6 +16,9 @@ FileListing::FileListing(QWidget* parent, QFileSystemModel* model):QListView(par
 
     this->setSelectionMode(QAbstractItemView::ContiguousSelection);
 
+
+
+
 }
 
 
@@ -33,10 +36,30 @@ void FileListing::onTextEdit()
 
     if (!idx.isValid())
     {
-        qDebug() << "enter a valid path using the completer";
+
+        m_messageBox =  new QMessageBox();
+        m_messageBox->setDefaultButton(QMessageBox::Ok);
+        m_messageBox->setText(QString("Provide a valid path using the completer. \nPath is invalid %1").arg(edit->text()));
+        m_messageBox->setIcon(QMessageBox::Critical);
+        m_messageBox->exec();
     }
 
     this->setRootIndex(idx);
 
 
+}
+
+
+
+void FileListing::onSelectionChanged(const QItemSelection& s, const QItemSelection& d)
+{
+    QModelIndexList items = s.indexes();
+
+    for (const QModelIndex& idx: std::as_const(items))
+    {
+
+        QString text  = idx.data(QFileSystemModel::FilePathRole).toString();
+
+        qDebug() << text;
+    }
 }

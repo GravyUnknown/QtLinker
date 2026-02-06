@@ -24,11 +24,3 @@ PathBar::PathBar(QWidget *parent) : QLineEdit(parent) {
 }
 
 
-void PathBar::onTextEdit()
-{
-    QDir pathGiven = this->text();
-    if(!pathGiven.exists())
-    {
-        qDebug() << "Use the completer for a valid path";
-    }
-}

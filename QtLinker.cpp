@@ -27,6 +27,12 @@ qtLinker::qtLinker(QWidget *parent)
 
   connect(pathbar, &QLineEdit::returnPressed, filelisting, &FileListing::onTextEdit);
 
+  QItemSelectionModel* viewModel = filelisting->selectionModel();
+
+
+  connect(viewModel, &QItemSelectionModel::selectionChanged, filelisting, &FileListing::onSelectionChanged);
+
+
 }
 
 
